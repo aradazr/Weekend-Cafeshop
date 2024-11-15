@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 class Product {
   String? id;
   String? name;
@@ -40,8 +42,15 @@ class Product {
       information: jsonObject['information'],
       price: jsonObject['price'],
       isAvailable: jsonObject['isAvailable'],
-      
-
     );
+  }
+
+  // متد برای فرمت کردن قیمت با کاما
+  String getFormattedPrice() {
+    if (price != null) {
+      final formatter = NumberFormat('#,###');
+      return formatter.format(price);
+    }
+    return '0';
   }
 }

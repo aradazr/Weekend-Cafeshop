@@ -75,7 +75,7 @@ class MyTextStyle {
       color: MyColors.productPriceColor);
       
       static final TextStyle productInfo = TextStyle(
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w500,
       fontFamily: 'shm',
       fontSize: 13,
       color: MyColors.productPriceColor);

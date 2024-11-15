@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weekend_cafeshop/bloc/category/category_bloc.dart';
 import 'package:weekend_cafeshop/di/2di.dart';
-import 'package:weekend_cafeshop/screens/home_screen.dart';
-import 'package:weekend_cafeshop/screens/product_screen.dart';
+import 'package:weekend_cafeshop/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await getItInit();
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp, // فقط حالت عمودی رو به بالا
+    DeviceOrientation.portraitDown, // حالت عمودی رو به پایین
+  ]).then((_) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,11 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: 
-      BlocProvider(
-        create: (context) => CategoryBloc(),
-        child: HomeScreen(),
-      ),
+      home: SplashScreen(), // تغییر مسیر به صفحه اسپلش
     );
   }
 }

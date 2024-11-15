@@ -248,13 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           color: Colors.black,
                                           fontWeight: FontWeight.w900,
                                         ),
-                                        // style: MyTextStyle.categoryName,
-                                        // style: TextStyle(
-                                        //   fontFamily: 'popb',
-                                        //   fontSize: 17,
-
-                                        //   color: Colors.black,
-                                        // ),
+                                        
                                       ),
                                     ],
                                   ),

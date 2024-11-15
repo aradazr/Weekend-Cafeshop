@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shimmer/shimmer.dart';
 
 import 'package:weekend_cafeshop/bloc/product/bloc/product_bloc.dart';
 import 'package:weekend_cafeshop/bloc/product/bloc/product_event.dart';
@@ -41,9 +42,39 @@ class _ProductScreenState extends State<ProductScreen> {
         child: BlocBuilder<ProductBloc, ProductState>(
           builder: (context, state) {
             if (state is ProductLoadingState) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
+              return ListView.builder(itemBuilder: (context, index) => Shimmer.fromColors(
+                          baseColor: Colors.grey[300]!,
+                          highlightColor: Colors.grey[100]!,
+                          child: Container(
+                            height: 145,
+                            margin:
+                              EdgeInsets.only(left: 27, right: 27, bottom: 11),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(23),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 11),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    color: Colors.grey[300],
+                                  ),
+                                  Container(
+                                    height: 20,
+                                    width: 50,
+                                    color: Colors.grey[300],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        itemCount: 10);
             } else if (state is ProductResponseState) {
               return Column(
               children: [
@@ -116,7 +147,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                   Directionality(
                                     textDirection: TextDirection.rtl,
                                     child: Text(
-                                      product.price.toString() + ' تومان',
+                                      product.getFormattedPrice() + ' تومان',
                                       style: MyTextStyle.productPrice,
                                     ),
                                   ),
