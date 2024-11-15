@@ -8,8 +8,13 @@ class MyColors {
   static const Color fallInLoveWithCoffeeColor = Color(0xFF000000);
   static const Color categoryContainerColor = Color(0xFFFFFFFF);
   static const Color textInsideImageColor = Color(0xFFFFFFFF);
+  static const Color productBackGroundColor = Color(0xFFFFFFFF);
   static const Color aradazrColor = Color(0xFFAAAAAA);
   static const Color categoryContainerBorderColor = Color(0xFF000000);
   static const Color weekendRightsColor = Color(0xFF000000);
+  static const Color productNameColor = Color(0xFF000000);
+  static const Color productPriceColor = Color(0xFF000000);
+  static const Color productInfoColor = Color(0xFF000000);
+  static const Color hotDrinkColor = Color(0xFF000000);
   static const Color categoryContainerShadowColor = Color.fromARGB(60, 0, 0, 0);
 }

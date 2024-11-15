@@ -3,12 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:weekend_cafeshop/bloc/category_bloc.dart';
-import 'package:weekend_cafeshop/bloc/category_event.dart';
-import 'package:weekend_cafeshop/bloc/category_state.dart';
+import 'package:weekend_cafeshop/bloc/category/category_bloc.dart';
+import 'package:weekend_cafeshop/bloc/category/category_event.dart';
+import 'package:weekend_cafeshop/bloc/category/category_state.dart';
+import 'package:weekend_cafeshop/bloc/product/bloc/product_bloc.dart';
 import 'package:weekend_cafeshop/constans/my_color.dart';
 import 'package:weekend_cafeshop/constans/my_text_style.dart';
 import 'package:weekend_cafeshop/data/model/category.dart';
+import 'package:weekend_cafeshop/screens/product_screen.dart';
 import 'package:weekend_cafeshop/widgets/cached_image.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,15 +21,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-   @override
+  @override
   void initState() {
     super.initState();
     // فراخوانی داده‌های اولیه برای بارگذاری دسته‌ها
     BlocProvider.of<CategoryBloc>(context).add(CategoryRequestList());
   }
 
- 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,15 +39,14 @@ class _HomeScreenState extends State<HomeScreen> {
               elevation: 10, // حذف سایه پیش‌فرض
               scrolledUnderElevation: 10,
               shadowColor: Colors.black, // سایه در حالت اسکرول
-              
+
               backgroundColor: MyColors.backGroundColor,
               pinned: true,
               floating: true,
               expandedHeight: 210,
               flexibleSpace: LayoutBuilder(
                 builder: (BuildContext context, BoxConstraints constraints) {
-                  final scrolled =
-                      constraints.biggest.height <= kToolbarHeight;
+                  final scrolled = constraints.biggest.height <= kToolbarHeight;
                   return PhysicalModel(
                     color: Colors.transparent,
                     elevation: !scrolled
@@ -62,7 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           bottomRight: Radius.circular(30),
                         ),
                       ),
-                      
                       child: FlexibleSpaceBar(
                         centerTitle: true,
                         title: scrolled
@@ -155,8 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               borderRadius: BorderRadius.circular(23),
                             ),
                             child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 11),
+                              padding: const EdgeInsets.symmetric(vertical: 11),
                               child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -184,8 +181,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     return state.response.fold(
                       (error) => SliverToBoxAdapter(
                         child: Center(
-                          child: Text(error,
-                              style: TextStyle(color: Colors.red)),
+                          child:
+                              Text(error, style: TextStyle(color: Colors.red)),
                         ),
                       ),
                       (categories) => SliverGrid(
@@ -198,54 +195,68 @@ class _HomeScreenState extends State<HomeScreen> {
                         delegate: SliverChildBuilderDelegate(
                           (context, index) {
                             Category category = categories[index];
-                            return Container(
-                              width: 98,
-                              decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color:
-                                        MyColors.categoryContainerShadowColor,
-                                    blurRadius: 4,
-                                    offset: Offset(0, 4),
-                                  ),
-                                ],
-                                color: MyColors.categoryContainerColor,
-                                borderRadius: BorderRadius.circular(23),
-                                border: Border.all(
-                                  width: 1.5,
-                                  color:
-                                      MyColors.categoryContainerBorderColor,
-                                ),
-                              ),
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 11),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    SizedBox(
-                                        height: 50,
-                                        child: CachedImage(
-                                          imageUrl: category.image,
-                                        )),
-                                    Text(
-                                      category.name,
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 13,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w900,
-
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BlocProvider(
+                                      create: (context) => ProductBloc(),
+                                      child: ProductScreen(
+                                        categoryId: category.id,
                                       ),
-                                      // style: MyTextStyle.categoryName,
-                                      // style: TextStyle(
-                                      //   fontFamily: 'popb',
-                                      //   fontSize: 17,
-                                        
-                                      //   color: Colors.black,
-                                      // ),
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 98,
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color:
+                                          MyColors.categoryContainerShadowColor,
+                                      blurRadius: 4,
+                                      offset: Offset(0, 4),
                                     ),
                                   ],
+                                  color: MyColors.categoryContainerColor,
+                                  borderRadius: BorderRadius.circular(23),
+                                  border: Border.all(
+                                    width: 1.5,
+                                    color:
+                                        MyColors.categoryContainerBorderColor,
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 11),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(
+                                          height: 50,
+                                          child: CachedImage(
+                                            imageUrl: category.image,
+                                          )),
+                                      Text(
+                                        category.name,
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 13,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w900,
+                                        ),
+                                        // style: MyTextStyle.categoryName,
+                                        // style: TextStyle(
+                                        //   fontFamily: 'popb',
+                                        //   fontSize: 17,
+
+                                        //   color: Colors.black,
+                                        // ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             );
@@ -256,7 +267,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   } else {
                     return SliverToBoxAdapter(
-                      child: Center(child: Text('هیچ داده‌ای موجود نیست'),),
+                      child: Center(
+                        child: Text('هیچ داده‌ای موجود نیست'),
+                      ),
                     );
                   }
                 },
@@ -273,7 +286,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   Positioned(
                     right: 50,
                     child: Column(
-                      
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 5),
@@ -282,11 +294,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               Text(
                                 '+98 903 511 6886',
                                 style: GoogleFonts.poppins(
-                                          fontSize: 16,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.normal,
-                                          
-                                        ),
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                ),
                               ),
                               SizedBox(
                                 width: 9,
@@ -347,22 +358,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   Positioned(
                     bottom: 15,
                     child: GestureDetector(
-                       onTap: () async {
-                                  final Uri url =
-                                      Uri.parse('https://www.instagram.com/aradazr.dev/profilecard/?igsh=dGhtMm92MXFna2Qx');
-                                  if (!await launchUrl(url)) {
-                                    throw Exception('Could not launch');
-                                  }
-                                }, // وقتی کاربر روی متن کلیک کند، اینستاگرام باز می‌شود
+                      onTap: () async {
+                        final Uri url = Uri.parse(
+                            'https://www.instagram.com/aradazr.dev/profilecard/?igsh=dGhtMm92MXFna2Qx');
+                        if (!await launchUrl(url)) {
+                          throw Exception('Could not launch');
+                        }
+                      }, // وقتی کاربر روی متن کلیک کند، اینستاگرام باز می‌شود
                       child: Row(
                         children: [
                           Image.asset(
                             'assets/images/link.png',
                             height: 15,
                           ),
-                          SizedBox(width: 5,),
-                          Text('ساخته شده توسط آراد آذرپناه',style: MyTextStyle.aradazr,),
-                          
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            'ساخته شده توسط آراد آذرپناه',
+                            style: MyTextStyle.aradazr,
+                          ),
                         ],
                       ),
                     ),
@@ -386,4 +401,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

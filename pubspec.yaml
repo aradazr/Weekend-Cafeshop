@@ -101,6 +101,20 @@ flutter:
       fonts:
         - asset: assets/fonts/NPINAZANINBOLD.TTF
 
+
+    - family: mj
+      fonts:
+        - asset: assets/fonts/MJ_PROMOTERLT.TTF
+
+
+    - family: shb
+      fonts:
+        - asset: assets/fonts/SHABNAM-BOLD-FD.TTF
+        
+    - family: shm
+      fonts:
+        - asset: assets/fonts/SHABNAM-MEDIUM-FD.TTF
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package

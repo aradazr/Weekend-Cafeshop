@@ -55,4 +55,28 @@ class MyTextStyle {
       fontFamily: 'popb',
       fontSize: 13,
       color: MyColors.aradazrColor);
+      
+      static final TextStyle hotDrink = TextStyle(
+      fontWeight: FontWeight.w800,
+      fontFamily: 'mj',
+      fontSize: 24,
+      color: MyColors.hotDrinkColor);
+      
+      static final TextStyle productName = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'shb',
+      fontSize: 20,
+      color: MyColors.productNameColor);
+      
+      static final TextStyle productPrice = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'shb',
+      fontSize: 17,
+      color: MyColors.productPriceColor);
+      
+      static final TextStyle productInfo = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'shm',
+      fontSize: 13,
+      color: MyColors.productPriceColor);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weekend_cafeshop/bloc/category_bloc.dart';
+import 'package:weekend_cafeshop/bloc/category/category_bloc.dart';
 import 'package:weekend_cafeshop/di/2di.dart';
 import 'package:weekend_cafeshop/screens/home_screen.dart';
 import 'package:weekend_cafeshop/screens/product_screen.dart';
@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: ProductScreen(),
-      // BlocProvider(
-      //   create: (context) => CategoryBloc(),
-      //   child: HomeScreen(),
-      // ),
+      home: 
+      BlocProvider(
+        create: (context) => CategoryBloc(),
+        child: HomeScreen(),
+      ),
     );
   }
 }

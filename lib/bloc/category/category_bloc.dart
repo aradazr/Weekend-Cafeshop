@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:weekend_cafeshop/bloc/category_event.dart';
-import 'package:weekend_cafeshop/bloc/category_state.dart';
+import 'package:weekend_cafeshop/bloc/category/category_event.dart';
+import 'package:weekend_cafeshop/bloc/category/category_state.dart';
 import 'package:weekend_cafeshop/data/repository/category_repository.dart';
 import 'package:weekend_cafeshop/di/2di.dart';
 
