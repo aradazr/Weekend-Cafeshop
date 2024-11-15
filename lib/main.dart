@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weekend_cafeshop/bloc/category_bloc.dart';
 import 'package:weekend_cafeshop/di/2di.dart';
 import 'package:weekend_cafeshop/screens/home_screen.dart';
+import 'package:weekend_cafeshop/screens/product_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,12 +21,13 @@ class MyApp extends StatelessWidget {
       title: 'Weekend Cafe Shop',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        
         useMaterial3: true,
       ),
-      home: HomeScreen()
+      home: ProductScreen(),
+      // BlocProvider(
+      //   create: (context) => CategoryBloc(),
+      //   child: HomeScreen(),
+      // ),
     );
   }
 }
-
-

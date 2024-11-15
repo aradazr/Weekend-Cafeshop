@@ -42,6 +42,8 @@ dependencies:
   dartz: ^0.10.1
   flutter_bloc: ^8.1.1
   bloc: ^8.1.4
+  shimmer: ^2.0.0
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +87,19 @@ flutter:
     - family: lilj
       fonts:
         - asset: assets/fonts/lilj.otf
+
+    - family: popm
+      fonts:
+        - asset: assets/fonts/popm.ttf
+
+
+    - family: popb
+      fonts:
+        - asset: assets/fonts/popb.ttf
+
+    - family: nzbold
+      fonts:
+        - asset: assets/fonts/NPINAZANINBOLD.TTF
 
   #
   # For details regarding fonts from package dependencies,

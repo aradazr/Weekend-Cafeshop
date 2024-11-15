@@ -24,28 +24,35 @@ class MyTextStyle {
       fontWeight: FontWeight.normal,
       color: MyColors.fallInLoveWithCoffeeColor);
 
-  static final TextStyle categoryName = GoogleFonts.poppins(
-      fontSize: 13,
-      fontWeight: FontWeight.bold,
-      
+  static final TextStyle categoryName = TextStyle(
+      fontFamily: 'nzbold',
+      fontSize: 17,
+      fontWeight: FontWeight.w900,
       color: MyColors.fallInLoveWithCoffeeColor);
-      
-      static final TextStyle textInsideImage = GoogleFonts.poppins(
-      fontSize: 16,
-      fontWeight: FontWeight.normal,
-      
-      color: MyColors.textInsideImageColor);
-      
-      static final TextStyle textInsideImageInstagram = GoogleFonts.poppins(
+
+  static final TextStyle textInsideImage = TextStyle(
+    fontWeight: FontWeight.w700,
+    fontFamily: 'popb',
+    fontSize: 16,
+    color: MyColors.textInsideImageColor,
+  );
+
+  static final TextStyle textInsideImageInstagram = TextStyle(
+    fontWeight: FontWeight.normal,
+    fontFamily: 'popb',
+    fontSize: 13,
+    color: MyColors.textInsideImageColor,
+  );
+
+  static final TextStyle weekendRights = TextStyle(
+      fontWeight: FontWeight.w700,
+      fontFamily: 'popb',
       fontSize: 13,
-      fontWeight: FontWeight.normal,
-      
-      color: MyColors.textInsideImageColor);
-      
-      static final TextStyle weekendRights = GoogleFonts.poppins(
-      fontSize: 13,
-      fontWeight: FontWeight.bold,
-      
-      
       color: MyColors.weekendRightsColor);
+
+  static final TextStyle aradazr = TextStyle(
+      fontWeight: FontWeight.w800,
+      fontFamily: 'popb',
+      fontSize: 13,
+      color: MyColors.aradazrColor);
 }
