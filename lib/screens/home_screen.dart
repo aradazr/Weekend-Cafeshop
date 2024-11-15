@@ -203,6 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     builder: (context) => BlocProvider(
                                       create: (context) => ProductBloc(),
                                       child: ProductScreen(
+                                        category: category,
                                         categoryId: category.id,
                                       ),
                                     ),

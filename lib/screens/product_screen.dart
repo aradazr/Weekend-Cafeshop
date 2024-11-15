@@ -1,20 +1,24 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:weekend_cafeshop/bloc/product/bloc/product_bloc.dart';
 import 'package:weekend_cafeshop/bloc/product/bloc/product_event.dart';
 import 'package:weekend_cafeshop/bloc/product/bloc/product_state.dart';
 import 'package:weekend_cafeshop/constans/my_color.dart';
 import 'package:weekend_cafeshop/constans/my_text_style.dart';
+import 'package:weekend_cafeshop/data/model/category.dart';
 import 'package:weekend_cafeshop/data/model/product.dart';
 import 'package:weekend_cafeshop/widgets/cached_image.dart';
 
 class ProductScreen extends StatefulWidget {
   final String categoryId;
-
-  const ProductScreen({
-    super.key,
+  Category category;
+   ProductScreen({
+    Key? key,
     required this.categoryId,
-  });
+    required this.category,
+  }) : super(key: key);
 
   @override
   State<ProductScreen> createState() => _ProductScreenState();
@@ -34,64 +38,62 @@ class _ProductScreenState extends State<ProductScreen> {
     return Scaffold(
       backgroundColor: MyColors.backGroundColor,
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.only(top: 29, left: 27, right: 27),
-                height: 53,
-                width: 336,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(23),
-                  color: MyColors.appBarColor,
-                  boxShadow: [
-                    BoxShadow(
-                      color: MyColors.categoryContainerShadowColor,
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
-                    )
-                  ],
+        child: BlocBuilder<ProductBloc, ProductState>(
+          builder: (context, state) {
+            if (state is ProductLoadingState) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            } else if (state is ProductResponseState) {
+              return Column(
+              children: [
+                SizedBox(
+                  width: double.infinity,
                 ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text('نوشیدنی گرم', style: MyTextStyle.hotDrink),
-                    SizedBox(width: 78),
-                    InkWell(
-                      onTap: () => Navigator.pop(context),
-                      child: Image.asset(
-                        'assets/images/remove.png',
-                        height: 25,
+                Container(
+                  alignment: Alignment.centerRight,
+                  margin: EdgeInsets.only(top: 29,),
+                  height: 53,
+                  width: 357,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(23),
+                    color: MyColors.appBarColor,
+                    boxShadow: [
+                      BoxShadow(
+                        color: MyColors.categoryContainerShadowColor,
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      
+                      Container(
+                        alignment: Alignment.center,
+                        width: 270,
+                        child: Text(widget.category.name, style: MyTextStyle.hotDrink)),
+                      
+                      InkWell(
+                        onTap: () => Navigator.pop(context),
+                        child: Image.asset(
+                          'assets/images/remove.png',
+                          height: 25,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 13),
-                  ],
+                      SizedBox(width: 15,),
+                    ],
+                  ),
                 ),
-              ),
-            ),
-            SliverToBoxAdapter(
-              child: SizedBox(height: 11),
-            ),
-            BlocBuilder<ProductBloc, ProductState>(
-              builder: (context, state) {
-                if (state is ProductLoadingState) {
-                  return SliverToBoxAdapter(
-                    child: Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                  );
-                } 
-//!-------------------------------------------------------------------------------
-                
-                else if (state is ProductResponseState) {
-                  return SliverFillRemaining(
-                    child: ListView.builder(
-                      itemCount: state.products.length,
-                      itemBuilder: (context, index) {
-                        var product = state.products[index];
-                        return Container(
+                SizedBox(height: 13,),
+                Flexible(
+                  child: ListView.builder(
+                    itemCount: state.products.length,
+                    itemBuilder: (context, index) {
+                      var product = state.products[index];
+                      return Container(
                           margin:
                               EdgeInsets.only(left: 27, right: 27, bottom: 11),
                           height: 154,
@@ -146,20 +148,23 @@ class _ProductScreenState extends State<ProductScreen> {
                             ],
                           ),
                         );
-                      },
-                    ),
-                  );
-                } else if (state is ProductErrorState) {
-                  return SliverToBoxAdapter(
-                      child: Center(child: Text(state.message)));
-                } else {
-                  return SliverToBoxAdapter(
-                      child: Center(child: Text('خطا در بارگذاری')));
-                }
-              },
-            )
-          ],
+                    },
+                  ),
+                )
+              ],
+            );
+            } else if(state is ProductErrorState){
+              return Center(
+                child: Text(state.message),
+              );
+
+            }else{
+              return Text('errrrorrr');
+            }
+            
+          },
         ),
+        
       ),
     );
   }
