@@ -2,8 +2,10 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import 'package:weekend_cafeshop/bloc/category/category_bloc.dart';
+import 'package:weekend_cafeshop/constans/my_color.dart';
 import 'package:weekend_cafeshop/screens/home_screen.dart'; // یا screens/category_screen.dart بسته به نیاز
 
 class SplashScreen extends StatefulWidget {
@@ -62,11 +64,16 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            CircularProgressIndicator(),
+          children:  [
+            Image.asset('assets/images/WeekendLogo.png',height: 200,),
+            SpinKitThreeBounce(
+              color: MyColors.titleColor,
+              size: 30.0,
+            ),
             SizedBox(height: 16),
             
           ],
