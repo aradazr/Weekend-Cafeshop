@@ -17,9 +17,9 @@ class CachedImage extends StatelessWidget {
       child: CachedNetworkImage(
         fit: fit,
         imageUrl: imageUrl ??
-            'https://startflutter.ir/api/files/f5pm8kntkfuwbn1/78q8w901e6iipuk/rectangle_63_7kADbEzuEo.png',
+            'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pixsector.com%2Ficon%2Ffree-image-icon-png-vector%2F891&psig=AOvVaw2-MXyQieTIj0fRBpjWdYMW&ust=1731840563495000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCuv4DX4IkDFQAAAAAdAAAAABAE',
         errorWidget: (context, url, error) => Container(
-          color: Colors.red[100],
+          color: const Color.fromARGB(255, 255, 0, 25),
         ),
         placeholder: (context, url) => Icon(Icons.image)
       ),

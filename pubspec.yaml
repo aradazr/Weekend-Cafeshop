@@ -43,7 +43,7 @@ dependencies:
   flutter_bloc: ^8.1.1
   bloc: ^8.1.4
   shimmer: ^2.0.0
-  connectivity_plus: ^3.0.3
+  connectivity_plus: ^6.1.0
   flutter_spinkit: ^5.2.1
   url_launcher: ^6.1.10
   intl: ^0.19.0

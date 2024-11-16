@@ -68,6 +68,12 @@ class MyTextStyle {
       fontSize: 20,
       color: MyColors.productNameColor);
       
+      static final TextStyle productNotAvailableName = TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'shb',
+      fontSize: 15,
+      color: MyColors.productNotAvailableColor);
+      
       static final TextStyle productPrice = TextStyle(
       fontWeight: FontWeight.bold,
       fontFamily: 'shb',

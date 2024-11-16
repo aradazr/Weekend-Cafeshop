@@ -15,10 +15,12 @@ import 'package:weekend_cafeshop/widgets/cached_image.dart';
 class ProductScreen extends StatefulWidget {
   final String categoryId;
   Category category;
+  
    ProductScreen({
     Key? key,
     required this.categoryId,
     required this.category,
+    
   }) : super(key: key);
 
   @override
@@ -31,7 +33,7 @@ class _ProductScreenState extends State<ProductScreen> {
     super.initState();
     // فراخوانی داده‌های اولیه برای بارگذاری دسته‌ها
     BlocProvider.of<ProductBloc>(context)
-        .add(ProductRequestList(categoryId: widget.categoryId));
+        .add(ProductRequestList(categoryId: widget.categoryId, ));
   }
 
   @override
@@ -124,7 +126,13 @@ class _ProductScreenState extends State<ProductScreen> {
                     itemCount: state.products.length,
                     itemBuilder: (context, index) {
                       var product = state.products[index];
-                      return Container(
+                      return   Container(
+                        foregroundDecoration: BoxDecoration(
+                          // color:  widget.productt?.isAvailable == true ?Colors.transparent: Color.fromARGB(226, 117, 117, 117),
+                          color:  product.isAvailable == true ? Colors.transparent: Color.fromARGB(195, 117, 117, 117),
+                          borderRadius: BorderRadius.circular(23),
+
+                        ),
                           margin:
                               EdgeInsets.only(left: 27, right: 27, bottom: 11),
                           height: 154,
@@ -139,9 +147,13 @@ class _ProductScreenState extends State<ProductScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
+                                  product.isAvailable == true ?
                                   Text(
                                     product.name ?? 'محصول نامشخص',
                                     style: MyTextStyle.productName,
+                                  ): Text(
+                                    '${product.name} موجود نیست',
+                                    style: MyTextStyle.productNotAvailableName,
                                   ),
                                   SizedBox(height: 10),
                                   Directionality(
