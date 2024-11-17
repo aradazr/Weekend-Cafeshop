@@ -11,7 +11,7 @@ class CheckDeviceWeb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // بررسی اندازه صفحه
-    final isSmallScreen = MediaQuery.of(context).size.width < 415;
+    final isSmallScreen = MediaQuery.of(context).size.width < 450;
 
     // دریافت User-Agent
     final userAgent = html.window.navigator.userAgent.toLowerCase();

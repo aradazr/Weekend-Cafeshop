@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:weekend_cafeshop/di/2di.dart';
 import 'package:weekend_cafeshop/screens/check_device_screen.dart';
 import 'package:weekend_cafeshop/screens/splash_screen.dart';
+import 'package:weekend_cafeshop/utils/extension/orientation_lock%20.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,8 +28,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: CheckDeviceWeb(
-        mobileView: SplashScreen(),
-        ), // تغییر مسیر به صفحه اسپلش
+        mobileView: OrientationLock(
+          child: SplashScreen(),
+        ),
+      ), // تغییر مسیر به صفحه اسپلش
     );
   }
 }
