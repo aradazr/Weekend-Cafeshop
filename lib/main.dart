@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weekend_cafeshop/bloc/category/category_bloc.dart';
 import 'package:weekend_cafeshop/di/2di.dart';
+import 'package:weekend_cafeshop/screens/check_device_screen.dart';
 import 'package:weekend_cafeshop/screens/splash_screen.dart';
 
 void main() async {
@@ -27,7 +26,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: SplashScreen(), // تغییر مسیر به صفحه اسپلش
+      home: CheckDeviceWeb(
+        mobileView: SplashScreen(),
+        ), // تغییر مسیر به صفحه اسپلش
     );
   }
 }

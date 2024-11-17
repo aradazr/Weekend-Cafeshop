@@ -24,63 +24,65 @@ class MyTextStyle {
       fontWeight: FontWeight.normal,
       color: MyColors.fallInLoveWithCoffeeColor);
 
-  static final TextStyle categoryName = TextStyle(
+  static const TextStyle categoryName = TextStyle(
       fontFamily: 'nzbold',
       fontSize: 17,
       fontWeight: FontWeight.w900,
       color: MyColors.fallInLoveWithCoffeeColor);
 
-  static final TextStyle textInsideImage = TextStyle(
+  static const TextStyle textInsideImage = TextStyle(
     fontWeight: FontWeight.w700,
     fontFamily: 'popb',
     fontSize: 16,
     color: MyColors.textInsideImageColor,
   );
 
-  static final TextStyle textInsideImageInstagram = TextStyle(
+  static const TextStyle textInsideImageInstagram = TextStyle(
     fontWeight: FontWeight.normal,
     fontFamily: 'popb',
     fontSize: 13,
     color: MyColors.textInsideImageColor,
   );
 
-  static final TextStyle weekendRights = TextStyle(
+  static const TextStyle weekendRights = TextStyle(
       fontWeight: FontWeight.w700,
       fontFamily: 'popb',
       fontSize: 13,
       color: MyColors.weekendRightsColor);
 
-  static final TextStyle aradazr = TextStyle(
+  static const TextStyle aradazr = TextStyle(
       fontWeight: FontWeight.w800,
       fontFamily: 'popb',
       fontSize: 13,
       color: MyColors.aradazrColor);
       
-      static final TextStyle hotDrink = TextStyle(
+      static const TextStyle hotDrink = TextStyle(
       fontWeight: FontWeight.w800,
       fontFamily: 'mj',
       fontSize: 24,
       color: MyColors.hotDrinkColor);
       
-      static final TextStyle productName = TextStyle(
+      static const TextStyle productName = TextStyle(
       fontWeight: FontWeight.bold,
       fontFamily: 'shb',
       fontSize: 20,
       color: MyColors.productNameColor);
       
-      static final TextStyle productNotAvailableName = TextStyle(
+      static const TextStyle productNotAvailableName = TextStyle(
+         
+        overflow: TextOverflow.clip,
       fontWeight: FontWeight.bold,
       fontFamily: 'shb',
       fontSize: 15,
       color: MyColors.productNotAvailableColor);
       
-      static final TextStyle productPrice = TextStyle(
+      static const TextStyle productPrice = TextStyle(
       fontWeight: FontWeight.bold,
       fontFamily: 'shb',
       fontSize: 17,
       color: MyColors.productPriceColor);
       
-      static final TextStyle productInfo = TextStyle(
+      static const TextStyle productInfo = TextStyle(
       fontWeight: FontWeight.w500,
       fontFamily: 'shm',
       fontSize: 13,

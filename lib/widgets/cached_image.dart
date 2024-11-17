@@ -1,13 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CachedImage extends StatelessWidget {
-  String? imageUrl;
-  double radius;
-  BoxFit fit;
-  CachedImage(
+  final String? imageUrl;
+  final double radius;
+  final BoxFit fit;
+  const CachedImage(
       {super.key, this.imageUrl, this.radius = 0, this.fit = BoxFit.cover});
 
   @override
@@ -21,7 +19,7 @@ class CachedImage extends StatelessWidget {
         errorWidget: (context, url, error) => Container(
           color: const Color.fromARGB(255, 255, 0, 25),
         ),
-        placeholder: (context, url) => Icon(Icons.image)
+        placeholder: (context, url) => const Icon(Icons.image)
       ),
     );
   }

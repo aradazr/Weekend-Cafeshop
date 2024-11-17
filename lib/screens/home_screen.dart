@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         : 0, // نمایش سایه زمانی که اپ‌بار باز است
                     shadowColor: Colors.black.withOpacity(0.9), // رنگ سایه
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: MyColors.appBarColor,
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(30),
@@ -64,13 +64,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: FlexibleSpaceBar(
                         centerTitle: true,
                         title: scrolled
-                            ? Text(
+                            ? const Text(
                                 'Weekend',
                                 style: MyTextStyle.title2,
                               )
                             : null,
                         background: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: MyColors.appBarColor,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(25),
@@ -86,11 +86,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Weekend',
                                       style: MyTextStyle.title,
                                     ),
-                                    SizedBox(height: 10),
+                                    const SizedBox(height: 10),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 5),
                                       child: Text(
@@ -98,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         style: MyTextStyle.cafeAndRestaurant,
                                       ),
                                     ),
-                                    SizedBox(height: 10),
+                                    const SizedBox(height: 10),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 5),
                                       child: Text(
@@ -132,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 33),
+              padding: const EdgeInsets.symmetric(horizontal: 33),
               sliver: BlocBuilder<CategoryBloc, CategoryState>(
                 builder: (context, state) {
                   if (state is CategoryLoadingState) {
@@ -182,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       (error) => SliverToBoxAdapter(
                         child: Center(
                           child:
-                              Text(error, style: TextStyle(color: Colors.red)),
+                              Text(error, style: const TextStyle(color: Colors.red)),
                         ),
                       ),
                       (categories) => SliverGrid(
@@ -213,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Container(
                                 width: 98,
                                 decoration: BoxDecoration(
-                                  boxShadow: [
+                                  boxShadow: const [
                                     BoxShadow(
                                       color:
                                           MyColors.categoryContainerShadowColor,
@@ -261,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     );
                   } else {
-                    return SliverToBoxAdapter(
+                    return const SliverToBoxAdapter(
                       child: Center(
                         child: Text('هیچ داده‌ای موجود نیست'),
                       ),
@@ -270,7 +270,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: SizedBox(height: 16),
             ),
             SliverToBoxAdapter(
@@ -294,7 +294,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   fontWeight: FontWeight.normal,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 9,
                               ),
                               Image.asset(
@@ -311,12 +311,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.only(left: 5),
                           child: Row(
                             children: [
-                              Text(
+                              const Text(
                                 'اهواز٬کیانپارس٬خیابان\nایدون٬بین میهن و یک',
                                 style: MyTextStyle.textInsideImage,
                                 textAlign: TextAlign.end,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 9,
                               ),
                               Image.asset(
@@ -331,20 +331,29 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 19),
-                          child: Row(
-                            children: [
-                              Text(
-                                'weekend_caferesturant',
-                                style: MyTextStyle.textInsideImageInstagram,
-                              ),
-                              SizedBox(
-                                width: 9,
-                              ),
-                              Image.asset(
-                                'assets/images/instagram.png',
-                                height: 22,
-                              ),
-                            ],
+                          child: GestureDetector(
+                             onTap: () async {
+                        final Uri url = Uri.parse(
+                            'https://www.instagram.com/weekend_caferesturant?igsh=OGQ5ZDc2ODk2ZA==');
+                        if (!await launchUrl(url)) {
+                          throw Exception('Could not launch');
+                        }
+                      }, // وقتی کاربر روی متن کلیک کند، اینستاگرام باز می‌شود
+                            child: Row(
+                              children: [
+                                const Text(
+                                  'weekend_caferesturant',
+                                  style: MyTextStyle.textInsideImageInstagram,
+                                ),
+                                const SizedBox(
+                                  width: 9,
+                                ),
+                                Image.asset(
+                                  'assets/images/instagram.png',
+                                  height: 22,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -366,10 +375,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             'assets/images/link.png',
                             height: 15,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
-                          Text(
+                          const Text(
                             'ساخته شده توسط آراد آذرپناه',
                             style: MyTextStyle.aradazr,
                           ),
@@ -380,9 +389,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SliverToBoxAdapter(
+            const SliverToBoxAdapter(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: EdgeInsets.symmetric(vertical: 10),
                 child: Text(
                   'تمامی حقوق این سایت متعلق\n.به کافی شاپ ویکند میباشد',
                   style: MyTextStyle.weekendRights,

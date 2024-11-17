@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
           MaterialPageRoute(
             builder: (context) => BlocProvider(
               create: (context) => CategoryBloc(),
-              child: HomeScreen(), // یا CategoryScreen
+              child: const HomeScreen(), // یا CategoryScreen
             ),
           ),
         );
@@ -71,8 +71,8 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
             Image.asset('assets/images/WeekendLogo.png',height: 200,),
-            SizedBox(height: 16),
-            SpinKitThreeBounce(
+            const SizedBox(height: 16),
+            const SpinKitThreeBounce(
               color: MyColors.titleColor,
               size: 30.0,
             ),
