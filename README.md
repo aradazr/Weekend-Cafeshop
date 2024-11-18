@@ -7,7 +7,6 @@ This website is designed for a newly opening coffee shop. The project focuses on
 
 ## 📸 Preview
 
-
 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
     <img src="https://github.com/user-attachments/assets/15698f7f-7616-42d1-baee-15cd80564281" alt="Coffee Shop Menu Preview 2" width="202"/>
     <img src="https://github.com/user-attachments/assets/aee485b7-20a6-403e-8fd9-9dec1153dc42" alt="Coffee Shop Menu Preview 2" width="202"/>
@@ -44,3 +43,10 @@ If you find this project useful or interesting, don’t forget to star it ⭐ on
 
 If you have any questions or suggestions, feel free to reach out to me:  
 [**Instagram**](https://www.instagram.com/aradazr.dev)
+
+## 🛠️ Badges
+
+![GitHub stars](https://img.shields.io/github/stars/aradazr/Weekend-Cafeshop)
+![GitHub forks](https://img.shields.io/github/forks/aradazr/Weekend-Cafeshop)
+![GitHub issues](https://img.shields.io/github/issues/aradazr/Weekend-Cafeshop)
+![GitHub license](https://img.shields.io/github/license/aradazr/Weekend-Cafeshop)
