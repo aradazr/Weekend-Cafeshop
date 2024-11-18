@@ -9,7 +9,7 @@ This website is designed for a newly opening coffee shop. The project focuses on
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
     <img src="https://github.com/user-attachments/assets/7b6c1f2b-f5ef-4cc9-b993-bcffd89fdd34" alt="Coffee Shop Menu Preview 1" width="200"/>
-    <img src="https://github.com/user-attachments/assets/aee485b7-20a6-403e-8fd9-9dec1153dc42" alt="Coffee Shop Menu Preview 2" width="200"/>
+    <img src="https://github.com/user-attachments/assets/aee485b7-20a6-403e-8fd9-9dec1153dc42" alt="Coffee Shop Menu Preview 2" width="210"/>
 </div>
 
 ---
