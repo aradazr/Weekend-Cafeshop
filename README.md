@@ -8,8 +8,8 @@ This website is designed for a newly opening coffee shop. The project focuses on
 ## 📸 Preview
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-    <img src="https://github.com/user-attachments/assets/7b6c1f2b-f5ef-4cc9-b993-bcffd89fdd34" alt="Coffee Shop Menu Preview 1" width="400"/>
-    <img src="https://github.com/user-attachments/assets/aee485b7-20a6-403e-8fd9-9dec1153dc42" alt="Coffee Shop Menu Preview 2" width="400"/>
+    <img src="https://github.com/user-attachments/assets/7b6c1f2b-f5ef-4cc9-b993-bcffd89fdd34" alt="Coffee Shop Menu Preview 1" width="300"/>
+    <img src="https://github.com/user-attachments/assets/aee485b7-20a6-403e-8fd9-9dec1153dc42" alt="Coffee Shop Menu Preview 2" width="300"/>
 </div>
 
 ---
@@ -20,6 +20,7 @@ This website is designed for a newly opening coffee shop. The project focuses on
 - 🧑‍💻 **BLoC Architecture**: Utilizes **BLoC (Business Logic Component)** for managing app states efficiently.
 - 🏗️ **Clean Architecture**: Designed with **Clean Architecture** to ensure code maintainability and scalability.
 - 📱 **Mobile Responsive**: Optimized for mobile devices to ensure a seamless user experience.
+- 🛠️ **Admin Panel**: Includes a fully functional admin panel for managing products, categories, and shop settings.
 
 ---
 
