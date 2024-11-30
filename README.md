@@ -1,16 +1,52 @@
-# weekend_cafeshop
+# ☕ Coffee Shop Menu Website
 
-A new Flutter project.
+Welcome to the **Coffee Shop Website** project!  
+This website is designed for a newly opening coffee shop. The project focuses on creating a beautiful and functional **menu for customers**, ensuring an excellent user experience.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📸 Preview
 
-A few resources to get you started if this is your first Flutter project:
+<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+    <img src="https://github.com/user-attachments/assets/15698f7f-7616-42d1-baee-15cd80564281" alt="Coffee Shop Menu Preview 2" width="202"/>
+    <img src="https://github.com/user-attachments/assets/aee485b7-20a6-403e-8fd9-9dec1153dc42" alt="Coffee Shop Menu Preview 2" width="202"/>
+    <img src="https://github.com/user-attachments/assets/7b6c1f2b-f5ef-4cc9-b993-bcffd89fdd34" alt="Coffee Shop Menu Preview 1" width="200"/>
+</div>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Features
+
+- 🍵 **Interactive Menu**: View a variety of coffee and snacks available at the shop.
+- 🧑‍💻 **BLoC Architecture**: Utilizes **BLoC (Business Logic Component)** for managing app states efficiently.
+- 🏗️ **Clean Architecture**: Designed with **Clean Architecture** to ensure code maintainability and scalability.
+- 📱 **Mobile Responsive**: Optimized for mobile devices to ensure a seamless user experience.
+- 🛠️ **Admin Panel**: Includes a fully functional admin panel for managing products, categories, and shop settings.
+
+---
+
+## 🔧 Architecture
+
+- **BLoC**: State management and business logic are handled through BLoC, making it easier to manage complex app flows.
+- **Clean Architecture**: This architecture is implemented to separate concerns and enhance maintainability.
+
+---
+
+## 💬 Enjoy the Project!
+
+I hope you enjoy browsing the website and exploring its features.  
+If you find this project useful or interesting, don’t forget to star it ⭐ on GitHub!
+
+---
+
+## 📬 Feedback & Contact
+
+If you have any questions or suggestions, feel free to reach out to me:  
+[**Instagram**](https://www.instagram.com/aradazr.dev)
+
+## 🛠️ Badges
+
+![GitHub stars](https://img.shields.io/github/stars/aradazr/Weekend-Cafeshop)
+![GitHub forks](https://img.shields.io/github/forks/aradazr/Weekend-Cafeshop)
+![GitHub issues](https://img.shields.io/github/issues/aradazr/Weekend-Cafeshop)
+![GitHub license](https://img.shields.io/github/license/aradazr/Weekend-Cafeshop)
