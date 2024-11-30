@@ -36,6 +36,7 @@ class _ProductScreenState extends State<ProductScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: MyColors.backGroundColor,
       body: SafeArea(
@@ -130,6 +131,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     itemBuilder: (context, index) {
                       var product = state.products[index];
                       return   Container(
+                        
                         foregroundDecoration: BoxDecoration(
                           // color:  widget.productt?.isAvailable == true ?Colors.transparent: Color.fromARGB(226, 117, 117, 117),
                           color:  product.isAvailable == true ? Colors.transparent: const Color.fromARGB(195, 117, 117, 117),
@@ -151,18 +153,23 @@ class _ProductScreenState extends State<ProductScreen> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   product.isAvailable == true ?
-                                  Text(
-                                    product.name ?? 'محصول نامشخص',
-                                    style: MyTextStyle.productName,
-                                  ): SizedBox(
-                                    width: 200,
-                                    child: Text(
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: TextAlign.start,
-                                      textDirection: TextDirection.rtl,
-                                      '${product.name} موجود نیست',
-                                      style: MyTextStyle.productNotAvailableName,
+                                  Directionality(
+                                    textDirection: TextDirection.rtl,
+                                    child: SizedBox(
+                                      width: size.width * 0.5,
+                                      child: Text(
+                                        product.name ?? 'محصول نامشخص',
+                                        overflow: TextOverflow.ellipsis,
+                                      
+                                        style: MyTextStyle.productName,
+                                      ),
                                     ),
+                                  ): Text(
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.start,
+                                    textDirection: TextDirection.rtl,
+                                    '${product.name}',
+                                    style: MyTextStyle.productNotAvailableName,
                                   ),
                                   const SizedBox(height: 10),
                                   Directionality(
