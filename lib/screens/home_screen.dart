@@ -48,10 +48,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 builder: (BuildContext context, BoxConstraints constraints) {
                   final scrolled = constraints.biggest.height <= kToolbarHeight;
                   return PhysicalModel(
-                    color: Colors.transparent,
+
+                    color: Colors.white,
                     elevation: !scrolled
                         ? 10
-                        : 0, // نمایش سایه زمانی که اپ‌بار باز است
+                        : 10, // نمایش سایه زمانی که اپ‌بار باز است
                     shadowColor: Colors.black.withOpacity(0.9), // رنگ سایه
                     child: Container(
                       decoration: const BoxDecoration(
