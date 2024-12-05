@@ -16,9 +16,9 @@ class CachedImage extends StatelessWidget {
         fit: fit,
         imageUrl: imageUrl ??
             'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pixsector.com%2Ficon%2Ffree-image-icon-png-vector%2F891&psig=AOvVaw2-MXyQieTIj0fRBpjWdYMW&ust=1731840563495000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCuv4DX4IkDFQAAAAAdAAAAABAE',
-        errorWidget: (context, url, error) => Container(
-          color: const Color.fromARGB(255, 255, 0, 25),
-        ),
+        errorWidget: (context, url, error) => SizedBox(
+          height: 25,
+          child: Image.asset('assets/images/noPic.png')),
         placeholder: (context, url) => const Icon(Icons.image)
       ),
     );

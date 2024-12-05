@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Padding(
                                       padding: const EdgeInsets.only(left: 5),
                                       child: Text(
-                                        'Fall in Love with\nCoffee in Weekend\nCoffeShop!',
+                                        'The House\nOf Mood!',
                                         style: MyTextStyle.fallInLoveWithCoffe,
                                       ),
                                     ),
