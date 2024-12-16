@@ -8,9 +8,9 @@ This website is designed for a newly opening coffee shop. The project focuses on
 ## 📸 Preview
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-    <img src="https://github.com/user-attachments/assets/15698f7f-7616-42d1-baee-15cd80564281" alt="Coffee Shop Menu Preview 2" width="202"/>
-    <img src="https://github.com/user-attachments/assets/aee485b7-20a6-403e-8fd9-9dec1153dc42" alt="Coffee Shop Menu Preview 2" width="202"/>
-    <img src="https://github.com/user-attachments/assets/7b6c1f2b-f5ef-4cc9-b993-bcffd89fdd34" alt="Coffee Shop Menu Preview 1" width="200"/>
+    <img src="https://github.com/user-attachments/assets/a126532b-4d3b-4f16-a5c0-e578fe619684" alt="Coffee Shop Menu Preview 2" width="202"/>
+    <img src="https://github.com/user-attachments/assets/93bf7127-7a2d-4141-8e60-b8331384eafc" alt="Coffee Shop Menu Preview 2" width="202"/>
+    <img src="https://github.com/user-attachments/assets/6c779d59-4146-4401-909f-3130cb195d0d" alt="Coffee Shop Menu Preview 1" width="200"/>
 </div>
 
 ---
