@@ -10,7 +10,7 @@ var locator = GetIt.instance;
 Future<void> getItInit() async {
   locator.registerSingleton<Dio>(
     Dio(
-      BaseOptions(baseUrl: 'https://pocketbase-5i4fn3.chbk.app/api/'),
+      BaseOptions(baseUrl: 'https'),
     ),
   );
   
