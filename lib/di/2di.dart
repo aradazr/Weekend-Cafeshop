@@ -14,7 +14,7 @@ Future<void> getItInit() async {
     ),
   );
   
-//https://pocketbase-5i4fn3.chbk.app/api/
+
   locator.registerFactory<ICategoryDatasource>(
     () => CategoryRemoteDatasource(),
   );
